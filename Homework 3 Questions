@@ -3,7 +3,7 @@ Chapter 3 Questions
 
 1. Why are functions advantageous to have in your programs?
 
-Functions are good for organization and debugging.
+Functions are useful for organization and debugging.
 
 
 2. When does the code in a function execute: when the function is defined or when the function is called?
@@ -23,12 +23,13 @@ A function is a set of instructions to be executed. A functionn call is the act 
 
 5. How many global scopes are there in a Python program? How many local scopes?
 
-There is only one global scope in a Python program. You may have however many local scopes you want.
+There is only one global scope in a Python program. A local scope is made whenever a function is called, so
+I believe you may have however many local scopes you want.
 
 
 6. What happens to variables in a local scope when the function call returns?
 
-The local scope and its variables are destoyed.
+The local scope and its variables are all destoyed.
 
 
 7. What is a return value? Can a return value be part of an expression?
@@ -43,28 +44,29 @@ None
 
 9. How can you force a variable in a function to refer to the global variable?
 
-
+By using the global statement.
 
 
 10. What is the data type of None?
 
-
+NoneType
 
 
 11. What does the import areallyourpetsnamederic statement do?
 
-
+That should import a module called 'areallyourpetsnamederic'.
 
 
 12. If you had a function named bacon() in a module named spam, how would you call it after importing spam?
 
-
+By using the spam.bacon() function call.
 
 
 13. How can you prevent a program from crashing when it gets an error?
 
-
+You can prevent a crash by putting the code that may cause an error in a try clause.
 
 
 14. What goes in the try clause? What goes in the except clause?
 
+Possible faulty code goes into a try clause. The code that executes if an error occurs goes into the except clause.
