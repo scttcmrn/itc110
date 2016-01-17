@@ -3,7 +3,8 @@ Chapter 2 questions
 
 1. What are the two values of the Boolean data type? How do you write them?
 
-True and False. 
+True
+False
 
 
 2. What are the three Boolean operators?
@@ -30,7 +31,7 @@ False or True     |                True
 False or False    |               False
 
 not:
-Expression        |      Evaluates to
+  Expression      |      Evaluates to
 not True          |               False
 not False         |                True
 
@@ -106,9 +107,10 @@ statement will restart the loop and reevaluate the loop's condition.
 12. What is the difference between range(10), range(0, 10), and range(0, 10, 1) 
 in a for loop?
 
-range(10) increments the variable 10 times.
-in range(0, 10) the variable starts at 0 and stops at 10.
-range(0, 10, 1) starts the variable at 0 and increases it by 1, 10 times.
+range(10) the variable goes up to (but not including) 10.
+in range(0, 10) the variable starts at 0 and goes up to (but not including) 10.
+range(0, 10, 1) the variable starts at 0 and goes up to (but not including) 10, in increments of 1.
+Functionally, they should all do the same thing.
 
 13. Write a short program that prints the numbers 1 to 10 using a for loop. Then 
 write an equivalent program that prints the numbers 1 to 10 using a while loop.
