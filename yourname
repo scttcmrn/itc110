@@ -1,0 +1,12 @@
+import sys
+
+while True:
+    print('Please enter your name.')
+    response = input()
+    if response == 'your name':
+        print('Thanks, bye!')
+        sys.exit()
+    elif response == 'your name.':
+        print('Thanks, bye!')
+        sys.exit()
+    print('You typed ' + response + '. ' + 'That is not your name.')
