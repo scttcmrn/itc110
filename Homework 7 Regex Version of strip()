@@ -1,0 +1,15 @@
+import re
+
+print('enter string to strip')
+stringtostrip = input()
+print('enter value to strip by')
+stripby = input()
+if stripby == '':
+    stripby = ' '
+
+def strippy(string, stripby):
+
+    strip = re.compile(stripby)
+    return strip.sub('', string)
+
+print(strippy(stringtostrip, stripby))
