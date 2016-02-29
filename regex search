@@ -1,0 +1,12 @@
+import re
+import os
+
+pattern = input('Enter what to find: ')
+for filename in os.listdir('.'):
+    if filename.endswith('.txt'):
+        file = open(filename)
+        filecontent = file.read()
+        regex = re.compile(pattern)
+        reg = regex.findall(filecontent)
+        for i in range(len(reg)):
+            print(reg[i])
