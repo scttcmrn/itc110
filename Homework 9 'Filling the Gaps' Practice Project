@@ -1,0 +1,38 @@
+#With this program I was able to fix 'holes' in numbered file names.
+#ex: file1.txt, file3.txt, file4.txt --> file1.txt, file2.txt, file3.txt
+
+import os, re
+
+def atoi(text):
+    return int(text) if text.isdigit() else text
+
+def natural_keys(text):
+    '''
+    alist.sort(key=natural_keys) sorts in human order
+    http://nedbatchelder.com/blog/200712/human_sorting.html
+    (See Toothy's implementation in the comments)
+    '''
+    return [ atoi(c) for c in re.split('(\d+)', text) ]
+
+#The above functions are not my creation, but natural_keys really helps
+#when trying to sort file names that contain numbers.
+
+print('Enter folder you wish to work with, ending with a "\\" character.')
+folder = input()
+filepre = input('Enter the file prefix you would like to use: ')
+os.chdir(folder)
+
+files = []
+num = 0
+for filename in os.listdir(folder):
+    files = files + [filename]
+files.sort(key=natural_keys)
+for each in files:
+    num = num + 1
+    if len(each) - len(filepre) ==  5:
+        suff = filepre + str(num) + '.txt'
+    if len(each) - len(filepre) ==  6:
+        suff = filepre + str(num) + '.txt'
+    if not each == suff:
+        os.rename(each, suff)
+print('Done')
