@@ -19,19 +19,22 @@ def natural_keys(text):
 
 print('Enter folder you wish to work with, ending with a "\\" character.')
 folder = input()
-filepre = input('Enter the file prefix you would like to use: ')
+print('Enter the file prefix you would like to use: ')
+filepre = input()
 os.chdir(folder)
 
 files = []
-num = 0
 for filename in os.listdir(folder):
     files = files + [filename]
 files.sort(key=natural_keys)
+num = 0
 for each in files:
     num = num + 1
     if len(each) - len(filepre) ==  5:
         suff = filepre + str(num) + '.txt'
     if len(each) - len(filepre) ==  6:
+        suff = filepre + str(num) + '.txt'
+    if len(each) - len(filepre) ==  7:
         suff = filepre + str(num) + '.txt'
     if not each == suff:
         os.rename(each, suff)
